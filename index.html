@@ -1,18 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Github</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    </head>
-    <body>
-        <h1>Hello Github. Hi I am Sonu.</h1>
-        <div class="container-fluid" id="div"></div>
-    </body>
-    $(document).ready(function(){
-			$("#div").load("Day1.html");
-	});
+  <head>
+    <title>Basic Calculator</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="index.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container-fluid">
+    <div class="container">
+	   <div class="screen">
+	     <input type="text" name="screen">
+		 <table class="table">
+		   <thead>
+		     <tr>
+		       <td><button class="symbols add">+</button></td><td><button class="symbols sub">-</button></td><td><button class="symbols pro">x</button></td><td><button class="symbols div">÷</button></td>
+		     </tr>
+		   </thead>
+		   <tbody>
+		     <tr>
+		       <td><button class="sev num">7</button></td><td><button class="eight num">8</button></td><td><button class="nine num">9</button></td><td rowspan="4"><button class="equal num" style="padding: 130px 0px;background-color:lightpink;color:orangered;">=</button></td>
+		     </tr>
+			 <tr>
+		       <td><button class="four num">4</button></td><td><button class="five num">5</button></td><td><button class="six num">6</button></td>
+		     </tr>
+		     <tr>
+		       <td><button class="one num">1</button></td><td><button class="two num">2</button></td><td><button class="three num">3</button></td>
+		     </tr>
+		     <tr>
+		       <td><button class="zero num">0</button></td><td><button class="dot num">.</button></td><td><button class="clear num">C</button></td>
+		     </tr>
+		   </tbody>
+		   <!--tr>
+		     <td><button class="symbols add">+</button></td><td><button class="symbols sub">-</button></td><td><button class="symbols pro">x</button></td><td><button class="symbols div">÷</button></td>
+		   </tr>
+		   <tr>
+		     <td><button class="sev">7</button></td><td><button class="eight">8</button></td><td><button class="nine">9</button></td><td colspan="3"><button class="equal">=</button></td>
+		   </tr>
+		   <tr>
+		     <td><button class="one">1</button></td><td><button class="two">2</button></td><td><button class="three">3</button></td>
+		   </tr>
+		   <tr>
+		     <td><button class="zero">0</button></td><td><button class="dot">.</button></td><td><button class="clear">C</button></td>
+		   </tr-->
+		 </table>
+	   </div>
+	</div>
+  </body>
+  <script>
+     $(document).ready(() => {
+	   $(".add").click(() => { $("input").val($("input").val()+"+"); });
+	   $(".sub").click(() => { $("input").val($("input").val()+"-"); });
+	   $(".pro").click(() => { $("input").val($("input").val()+"x"); });
+	   $(".div").click(() => { $("input").val($("input").val()+"÷"); });
+	   $(".zero").click(() => { $("input").val($("input").val()+"0"); });
+	   $(".dot").click(() => { $("input").val($("input").val()+"."); });
+	   $(".clear").click(() => { $("input").val(""); });
+	   $(".one").click(() => { $("input").val($("input").val()+"1"); });
+	   $(".two").click(() => { $("input").val($("input").val()+"2"); });
+	   $(".three").click(() => { $("input").val($("input").val()+"3"); });
+	   $(".four").click(() => { $("input").val($("input").val()+"4"); });
+	   $(".five").click(() => { $("input").val($("input").val()+"5"); });
+	   $(".six").click(() => { $("input").val($("input").val()+"6"); });
+	   $(".sev").click(() => { $("input").val($("input").val()+"7"); });
+	   $(".eight").click(() => { $("input").val($("input").val()+"8"); });
+	   $(".nine").click(() => { $("input").val($("input").val()+"9"); });
+	   $(".equal").click(() => { 
+		  var apa = $("input").val();
+		  apa = passThevariable(apa);
+		  $("input").val(eval(apa));
+	   });
+	 });
+  </script>
 </html>
